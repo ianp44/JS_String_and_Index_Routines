@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<<html>
+<head><title>Ian's Javascript Parsable Strings test Page</title>
+<!--
+/*
+// javscript index system development stuff
+// version 7.0 9/12/18
+
+// See www.pouncy.co.uk for author's website
+
+
+COPYRIGHT NOTICE.
+This code is copyright (C) by Ian Pouncy 3/12/18.
+under the GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007 , see Free Software Foundation, Inc. <http://fsf.org/>
+
+This means you can use it if you want under the terms of that licence.
+
+
+This source code has been registered on github (user name Ianp44) on 9/12/18
+
+*/
+
+-->
+
+
+
+<!--
+<script src= "js_ar_strings3.js"></script>
+-->
+<script src= "js_ar_strings_abc5_3.js"></script>
+
+<script>
+
+var err_id_lab;
+
+
+
+/*
+lab vars
+*/
+
+var lab_var_pars_string;
+var lab_var_pars_string_and_sp;
+var lab_var_get_num_zint;
+var lab_var_get_num_frac3;
+var lab_var_get_num_whole_frac;
+var lab_var_chk_error_case;
+var lab_var_append_tst1;
+var lab_var_append_str_obj_slice;
+var lab_var_tst_fsort_date1;
+
+var lab_var_remtsp;
+var lab_var_pars_bracket_txt;
+
+var lab_var_date_pars1;
+var lab_var_tst_fdate1;
+var lab_var_f_pars_str1;
+
+
+
+
+
+
+
+
+
+
+function clear_err_reps3(){
+
+document.getElementById(err_id_lab).innerHTML = '';
+
+
+}
+
+function rep_error(ltxt){
+var ltxt3;
+
+ltxt3='Error(3):'+ltxt+'<br>\n';
+
+document.getElementById(err_id_lab).innerHTML = ltxt3;
+
+disp_dbtxt();
+
+}
+
+function init_lab_vars3(){
+
+lab_var_pars_string=0;
+lab_var_pars_string_and_sp=1;
+lab_var_get_num_zint=2;
+lab_var_get_num_frac3=3;
+lab_var_get_num_whole_frac=4;
+lab_var_append_tst1=5;
+lab_var_date_pars1=7;
+lab_var_tst_fdate1=13;
+lab_var_remtsp=19;
+lab_var_pars_bracket_txt=23;
+lab_var_append_str_obj_slice=9;
+lab_var_tst_fsort_date1=15;
+lab_var_f_pars_str1=17;
+
+lab_var_chk_error_case=53;
+
+
+
+}
+
+function init_vars6_7(){
+err_id_lab='errorid3';
+
+
+}
+
+
+function zinit7(){
+
+init_vars6_7();
+init_vars_305();
+init_lab_vars3();
+init_dbtxt();
+clear_dbtxt3();
+
+/*
+sort_db_sw3=true;
+*/
+
+sort_db_sw3=false;
+
+
+
+init_tog_buttons();
+
+
+
+
+}
+
+</script>
+
+
+
+<style type="text/css">
+.id1divclass {
+	font-family: "Times New Roman";
+	font-size: 12pt;
+	position: relative;
+	width: 908px;
+	left: 9px;
+
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+.zred {
+	font-family: "Times New Roman";
+	font-size: 12pt;
+	font-weight: bold;
+	color: #F00;
+}
+
+.glossdataclass {
+	font-family: "Times New Roman";
+	font-size: 12pt;
+	text-align: left;
+}
+.id1pclass {
+	font-family: "Times New Roman";
+	font-size: 12pt;
+	border: 1px solid #00F;
+}
+.button_class {
+	font-family: "Times New Roman";
+	font-size: 12pt;
+}
+.buttonhlpclass {
+	border: 1px solid #00F;
+	width: 600px;
+	font-family: "Times New Roman";
+	font-size: 12pt;
+	font-weight: bold;
+}
+.form_class_id {
+	font-family: "Courier New";
+	font-size: 12pt;
+}
+.treedivclass {
+	font-family: "Times New Roman";
+	font-size: 12pt;
+	color: #090;
+}
+.bgclass {
+	background-color: #F00;
+}
+.itxtclass {
+	font-family: "Times New Roman";
+	font-size: 12pt;
+}
+.zred {
+	font-family: "Times New Roman";
+	font-size: 12pt;
+	font-weight: bold;
+	color: #F00;
+}
+.bclass {
+	font-family: "Times New Roman";
+	font-size: 12pt;
+}
+.gtableclass {
+	border: 2px solid #000;
+	width: 600px;
+	font-family: "Times New Roman";
+	font-size: 12pt;
+}
+.glosstitleclass {
+	font-family: "Times New Roman";
+	font-size: 20pt;
+	font-weight: bold;
+	color: #00F;
+	text-align: center;
+}
+.tableidclass2 {
+	font-family: "Times New Roman";
+	font-size: 12pt;
+	border: 2px solid #00F;
+	position: relative;
+	visibility: visible;
+	z-index: 1;
+	width: 800px;
+	left: 100px;
+	padding: 15px;
+}
+
+.headtitleclass{
+	font-family: "Times New Roman";
+	font-size: 20pt;
+	font-weight: bold;
+	color: #00F;
+	text-align: center;
+}
+
+.indextitleclass{
+	font-family: "Times New Roman";
+	font-size: 20pt;
+	font-weight: bold;
+	color: #00F;
+	text-align: center;
+}
+.tabletitleclass {
+	font-family: "Times New Roman";
+	font-size: 20pt;
+	font-weight: bold;
+	color: #00F;
+	text-align: center;
+}
+.entryidclass {
+	font-family: "Times New Roman";
+	font-size: 12pt;
+	border: 2px solid #00F;
+	position: relative;
+	visibility: visible;
+	z-index: 1;
+	width: 600px;
+	left: 100px;
+	padding: 15px;
+}
+.glosscatclass {
+	font-family: "Times New Roman";
+	font-size: 12pt;
+	font-weight: bold;
+	color: #00F;
+}
+.gloss_ind_tabclass {
+	font-family: "Times New Roman";
+	font-size: 12pt;
+	font-weight: bold;
+	border: 1px solid #000;
+	width: 800px;
+}
+</style>
+
+<!--
+** No CSS external files in this page **
+No action on 27/8/17
+old css link
+<link href="compiler_parser.css" rel="stylesheet" type="text/css">
+-->
+
+<!--
+new  css link 28/7/17
+<link href="ai_demo_compiler_parser_upm_1.css" rel="stylesheet" type="text/css">
+-->
+
+</head>
+<body class="bclass" onload="zinit7()">
+<p class="headtitleclass"><b>Ian's Javascript Parsable Strings test Page</b><br>
+
+</p>
+<p>
+(Version 1.89 20/9/18 (1.2.5)
+)
+<br>
+Half running
+<br>
+</p>
+
+<b>Program error trap button:</b><br>
+<button id="id1_no_trap_button" onclick="tog_tog_obj1(no_trap_button1)">No Trap Toggle Button</button><br>
+<br>
+<br>
+
+
+<p>
+<b>Program Status:</b><span id="statusid" >Status Report Text
+</span> <br>
+<br>
+
+<b>Program Error Status:</b>
+<span id="errorid3" >Error Report Text
+</span><br>
+
+<b>Debug Report Text:</b>
+<p id="db_id_thing3" >Debug report text
+</p><br>
+<br>
+<br>
+
+
+<form id="form3_5">
+<b>Arg1:</b><input type="text" name="arg1" value="15"><br>
+<b>Arg2:</b><input type="text" name="arg2" value="10"><br>
+</form>
+<!--
+<button onclick="do_program_tst()">Test 1</button><br>
+-->
+<!--
+<button id="id1_no_trap_button" onclick="tog_tog_obj1(no_trap_button1)">No Trap Toggle Button</button><br>
+<br>
+<br>
+-->
+
+
+<button onclick="do_program_tst(lab_var_pars_string)">Test Pars String 1</button><br>
+<button onclick="do_program_tst(lab_var_pars_string_and_sp)">Test Pars String AND leading spaces</button><br>
+<button onclick="do_program_tst(lab_var_get_num_zint)">Test Pars Number int part</button><br>
+
+
+<button onclick="do_program_tst(lab_var_get_num_frac3)">Test Pars Number frac part</button><br>
+<button onclick="do_program_tst(lab_var_get_num_whole_frac)">Test (Not Imp)</button><br>
+<button onclick="do_program_tst(lab_var_remtsp)">Test remove trailing spaces (1) </button><br>
+
+<button onclick="do_program_tst(lab_var_pars_bracket_txt)">Test pars bracket text (1) </button><br>
+
+
+<button onclick="do_program_tst(lab_var_append_tst1)">Append Test 1</button><br>
+
+
+<button onclick="do_program_tst(lab_var_append_str_obj_slice)">Append Test (with slice) </button><br>
+
+
+
+
+<button onclick="do_program_tst(lab_var_date_pars1)"> Date Parse Test 1</button><br>
+<button onclick="do_program_tst(lab_var_tst_fsort_date1)">Test  Date Sort</button><br>
+
+<button onclick="do_program_tst(lab_var_tst_fdate1)"> Find Date in str Parse Test 1</button><br>
+
+
+<button onclick="do_program_tst(lab_var_f_pars_str1)"> Find Str (Pars Str) in str Parse Test 1</button><br>
+
+
+
+
+
+
+<button onclick="do_program_tst(lab_var_chk_error_case)">Test malfunction mode</button><br>
+
+<!--
+
+<button onclick="do_program_tst('test1')">Test 1</button><br>
+<button onclick="do_program_tst('test2')">Test 2</button><br>
+<button onclick="do_program_tst('get_num_zint')">Test get_num_sbj int part</button><br>
+
+
+<button onclick="do_program_tst('get_num_frac3')">Test get_num_sbj frac part</button><br>
+
+<button onclick="do_program_tst('test2z')">Test malfunction mode</button><br>
+-->
+
+<b>Program Test Output:</b><br>
+<p id="test_output_id3" >Test output text.
+</span><br>
+
+
+
+
+
+<br>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
